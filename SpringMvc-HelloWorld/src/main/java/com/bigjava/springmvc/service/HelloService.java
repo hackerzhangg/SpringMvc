@@ -12,6 +12,11 @@ public class HelloService {
 
     public String helloService(String name){
 
-        return "hello"+name;
+        return "hello" + name;
+    }
+
+    public String hello(String name){
+
+        return "hello" + name;
     }
 }
