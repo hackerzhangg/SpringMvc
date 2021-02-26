@@ -24,4 +24,9 @@ public class HelloService {
 
         return "";
     }
+
+    public String test(){
+
+        return "";
+    }
 }
