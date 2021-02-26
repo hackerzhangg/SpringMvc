@@ -19,4 +19,9 @@ public class HelloService {
 
         return "hello" + name;
     }
+
+    public String demo(){
+
+        return "";
+    }
 }
