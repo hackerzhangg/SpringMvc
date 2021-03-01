@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--首先配置一个 MyController 的实例-->
+    <bean class="com.bigjava18.springmvc.controller.MyController1" name="myController1"></bean>
+    <bean class="com.bigjava18.springmvc.controller.MyController2" name="myController2"></bean>
+
+    <!--配置处理器映射器，将前端请求和后段的接口关联起来-->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/hello1">myController1</prop>
+                <prop key="/hello2">myController2</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--处理适配器-->
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" name="handlerAdapter"/>
+    <bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter" name="requestHandlerAdapter"/>
+
+    <!--处理解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="viewResolver">
+        <property name="prefix" value="/jsp/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+</beans>
