@@ -10,23 +10,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class HelloService {
 
-    public String helloService(String name){
-
-        return "hello" + name;
-    }
-
     public String hello(String name){
 
         return "hello" + name;
     }
 
-    public String demo(){
-
-        return "";
-    }
-
-    public String test(){
-
-        return "";
-    }
 }

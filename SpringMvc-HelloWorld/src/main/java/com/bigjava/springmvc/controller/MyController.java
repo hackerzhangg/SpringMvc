@@ -1,5 +1,7 @@
 package com.bigjava.springmvc.controller;
 
+import com.bigjava.springmvc.service.HelloService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
@@ -11,7 +13,11 @@ import javax.servlet.http.HttpServletResponse;
  * @Since 2021 -02 -25 10 :15
  * @Description
  */
+@org.springframework.stereotype.Controller("/hello")
 public class MyController implements Controller {
+
+    @Autowired
+    HelloService helloService;
 
     /**
      * 这个方法用来处理请求
@@ -26,6 +32,7 @@ public class MyController implements Controller {
         modelAndView.addObject("name","Lisi");
         modelAndView.addObject("sex","man");
         modelAndView.addObject("age",18);
+        System.out.println("helloService.hello(\"javaboy\") = " + helloService.hello("javaboy"));
         return modelAndView;
     }
 }
