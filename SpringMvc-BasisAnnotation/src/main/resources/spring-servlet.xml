@@ -16,18 +16,18 @@
               id="requestMappingHandlerAdapter"/>
     -->
 
-    <!--<bean class="org.springframework.format.support.FormattingConversionServiceFactoryBean" id="conversionService">
+    <bean class="org.springframework.format.support.FormattingConversionServiceFactoryBean" id="conversionService">
         <property name="converters">
             <set>
                 <ref bean="myDateConverter"/>
             </set>
         </property>
-    </bean>-->
+    </bean>
     <!--<mvc:annotation-driven conversion-service="conversionService"/>-->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven conversion-service="conversionService"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="viewResolver">
-        <property name="prefix" value="/"/>
+        <property name="prefix" value="/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 </beans>
